@@ -1,0 +1,51 @@
+.modal-content-container{
+    display: block;
+    margin: 0 auto;
+    top: 20px;
+    position: relative;
+}
+.add-test-floating-btn{
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 15px;
+}
+.test-name-container{
+    position: relative;
+}
+
+.user-upsert-row {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+}
+.user-upsert-row > div {
+    color: black;
+    width: 15%;
+}
+
+.user-upsert-row-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    color:black;
+}
+
+.user-upsert-row-item-name {
+    width: 33% !important;
+}
+
+.root {
+    flex-grow: 1;
+    background-color: white;
+}
+
+.app-bar {
+    position: relative !important;
+ }
+ .title {
+     margin-left: 2px;
+     flex: 1;
+ }

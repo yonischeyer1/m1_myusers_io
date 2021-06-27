@@ -1,0 +1,35 @@
+.modal-content-container {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    overflow: auto;
+}
+.test-name-container {
+    position: relative;
+}
+
+.pick-action-combobox-container {
+    position: relative;
+}
+.done-cancel-btns {
+    position: relative;
+}
+
+.root {
+    flex-grow: 1;
+    background-color: white;
+}
+
+.heading {
+    font-size: large;
+    font-weight: bold;
+}
+
+.app-bar {
+    position: relative !important;
+ }
+ .title {
+     margin-left: 2px;
+     flex: 1;
+ }

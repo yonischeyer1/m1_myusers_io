@@ -1,0 +1,28 @@
+.modal-content-container {
+    display: block;
+    margin: 0 auto;
+    top: 20px;
+    position: relative;
+}
+.test-name-container {
+    position: relative;
+}
+.pick-action-combobox-container {
+    position: relative;
+}
+.done-cancel-btns {
+    position: relative;
+}
+
+.app-bar {
+    position: relative !important;
+}
+.title {
+    margin-left: 2px;
+    flex: 1;
+}
+.form-control {
+    margin: 1px;
+    min-width: 120;
+    width:200;
+}

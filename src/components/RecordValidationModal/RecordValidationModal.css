@@ -1,0 +1,49 @@
+.modal-content-container{
+    display: block;
+    margin: 0 auto;
+    top: 20px;
+    position: relative;
+}
+.guide-label-record{
+    color: #5090f3;
+    font-size: 22px;
+    font-weight: 600;
+    border-bottom: 1px dotted #0400ff;
+    width: 290px;
+}
+.video-container{
+  position: relative;
+}
+
+.modal-verifaction-buttons-controls {
+    display: flex;
+    position: relative;
+    top: 16px;
+}
+.yes-button{
+    position: absolute;
+    right: 0px;
+}
+.screen-setMaxTimeout-container{
+    height: 300px;
+    overflow: auto;
+}
+.record-modal-save-btn-container{
+    position: relative;
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.app-bar {
+    position: relative !important;
+ }
+ .title {
+     margin-left: 2px;
+     flex: 1;
+ }
+
+ .loading-container {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}

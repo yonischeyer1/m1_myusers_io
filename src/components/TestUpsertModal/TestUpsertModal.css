@@ -1,0 +1,80 @@
+.modal-content-container {
+    display: block;
+    margin: 0 auto;
+    top: 20px;
+    position: relative;
+    width:75%;
+    height: 100%;
+}
+
+.test-name-container-suite{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.test-name-container{
+  position: relative;
+  display: flex;
+  justify-content: right;
+  margin-left: 100px;
+}
+.pick-user-combobox-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.pick-action-combobox-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.pick-schedule-container{
+    position: relative;
+}
+.pick-user-finish-action-container{
+    position: relative;
+}
+.done-cancel-btns{
+    position: fixed;
+    bottom: 4%;
+    width: 80%;
+}
+.add-button-container {
+    position: absolute;
+    right: 315px;
+    bottom: 7px;
+}
+.suite-container {
+    position: relative;
+    overflow: auto;
+    height: 50%;
+    overflow-x: hidden;
+    border-top: 1px dotted;
+}
+
+.user-action-select-container {
+    display: flex;
+    justify-content:right;
+    margin-left:100px;
+    position:relative;
+    width: 93%;
+}
+
+.done-cancel-btns-contianer {
+    display:flex;
+    justify-content:right;
+    margin-left:100px;
+}
+
+.app-bar {
+    position: relative !important;
+ }
+ .title {
+     margin-left: 2px;
+     flex: 1;
+ }
+ .form-control {
+     margin: 1px !important;
+     min-width: 120px !important;
+     width:200px !important;
+ }

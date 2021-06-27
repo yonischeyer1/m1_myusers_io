@@ -1,0 +1,27 @@
+.modal-content-container {
+    display: block;
+    margin: 0 auto;
+    top: 20px;
+    position: relative;
+    width: 70%;
+}
+.app-bar {
+    position: relative !important;
+ }
+ .title {
+     margin-left: 2px;
+     flex: 1;
+ }
+
+ .wait-time-text-field { 
+    height: 45px;
+    left: 124px;
+    bottom: 40px;
+ }
+
+ .cancel-save-buttons {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 150px;
+ }
