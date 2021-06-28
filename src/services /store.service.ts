@@ -74,10 +74,16 @@ export default class ServiceStore {
     }
     load(collectionName:any) {
         return new Promise((resolve, reject)=>{
+            if (!fs.existsSync(DB_FOLDER_PATH)){
+                fs.mkdirSync(DB_FOLDER_PATH);
+            }
             const modelJsonPath = `${DB_FOLDER_PATH}/${collectionName}.json`
+            console.log("modelJsonPath",modelJsonPath)
             fs.exists(modelJsonPath,(exsists) => {
+                console.log("not exsisting", exsists)
                 if(!exsists) {
-                    fs.writeFileSync(modelJsonPath, JSON.stringify([]))
+                    console.log("not exsisting")
+                    fs.writeFileSync(modelJsonPath, JSON.stringify({}))
                     return resolve([])
                 }
                 const Model = JSON.parse(fs.readFileSync(modelJsonPath))
