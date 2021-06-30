@@ -8,8 +8,6 @@ import crypto from 'crypto';
 let appPath = process.env.NODE_ENV === 'production' ? process.resourcesPath : `${process.cwd()}/src`
 if(appPath.indexOf("app.asar") > -1) {
     appPath = isWindows() ? appPath.replace("resources\\app.asar","app") : appPath.replace("Resources/app.asar","app")
-    const fixPath = require('fix-path');
-    fixPath();
 }
 
 export const APP_CWD = isWindows() ? `${appPath}\\` : `${appPath}/` ;
