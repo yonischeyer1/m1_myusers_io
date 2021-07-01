@@ -51,6 +51,9 @@
       "entitlementsInherit": "assets/entitlements.mac.plist",
       "gatekeeperAssess": false
     },
+    "extraFiles": [
+      "src/dockerMeta/"
+    ],
     "dmg": {
       "contents": [
         {
