@@ -254,7 +254,7 @@
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/styles": "^4.11.4",
-    "@novnc/novnc": "^1.2.0",
+    "@novnc/novnc": "1.1.0",
     "archiver": "^5.3.0",
     "canvas": "^2.8.0",
     "electron-debug": "^3.1.0",
