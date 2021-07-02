@@ -2,7 +2,7 @@
     FROM arm64v8/debian:latest
 
     USER root
-    RUN apt-get update && apt-get install -y sudo curl unzip libgconf-2-4 scrot openjdk-11-jre-headless xvfb chromium x11vnc libxkbcommon-x11-0 ffmpeg procps 
+    RUN apt-get update && apt-get install -y sudo curl unzip libgconf-2-4 scrot openjdk-11-jdk xvfb chromium x11vnc libxkbcommon-x11-0 ffmpeg procps 
     RUN apt-get install -y gnupg build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev libc6
     RUN apt-get install -y glib2.0-dev libexpat1-dev pkg-config libtiff5-dev libjpeg62-turbo-dev libgsf-1-dev
     COPY pin_nodesource /etc/apt/preferences.d/nodesource
