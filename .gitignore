@@ -38,6 +38,8 @@ src/renderer.prod.js
 src/renderer.prod.js.map
 src/style.css
 src/style.css.map
+src/DB
+src/sessions
 dist
 dll
 main.js
