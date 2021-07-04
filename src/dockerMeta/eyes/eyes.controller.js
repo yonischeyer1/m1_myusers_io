@@ -8,10 +8,6 @@ const { frameToHash, imageToHash, imageToHashAndURI,
     drawOnImageAndReturnHashNODEJS, imageURIToHash } = require('./eyes.core')
 
 
-const MAX_ATTEMPTS = 5 
-const ATTEMPT_DELAY = 1500
-
-
 let instance = null
 class EyesController {
     constructor(){
@@ -57,7 +53,7 @@ class EyesController {
         if(!isMatching.matching) {
             const isFailedTest =  await this.failTest(res, isMatching.dist ,frameURI) 
             if(!isFailedTest) {
-                return this.retryMatching(res)
+                return this.retryMatching(res, currentTag)
             }
         }
     }
@@ -123,17 +119,17 @@ class EyesController {
         return false
     }
 
-    async retryMatching(res) {
+    async retryMatching(res, currentTag) {
         await removeScreenShot(this._tagIdx)
         this._getTagDistanceAttemptIdx++
-        await this.delay()
+        await this.delay(currentTag.waitTime.value)
         await this.isDistValid(res)
     }
 
-    async delay () {
+    async delay (waitTime) {
         await (()=>{
             return new Promise((resolve,reject)=>{
-                setTimeout(()=>{resolve()}, ATTEMPT_DELAY)
+                setTimeout(()=>{resolve()}, waitTime)
             })
         })()
         return

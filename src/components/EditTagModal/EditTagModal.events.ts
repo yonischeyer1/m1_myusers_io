@@ -60,6 +60,11 @@ export default class EditTagModalEvents {
           const label = e.target.value
           const tag = this.state.tag
           tag.waitTime.label = label;
+          if(label === "forever") {
+            tag.waitTime.value = -1 
+          } else {
+            tag.waitTime.value = 1
+          }
           await this.setState({...this.state, tag})
     };
     
