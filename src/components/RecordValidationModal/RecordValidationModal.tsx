@@ -52,7 +52,7 @@ export default function FullScreenDialog(props:any) {
              </video>
            </div>
            <div className={styles["modal-verifaction-buttons-controls"]}>
-             <Button size="small" variant="outlined" color="secondary"  onClick={_events.handleClose.bind(_events)}>record again</Button>
+             <Button size="small" variant="outlined" color="secondary"  onClick={_events.recordAgain.bind(_events)}>record again</Button>
               <div className={styles["yes-button"]}>
                  <Button  size="small" variant="outlined" color="primary" onClick={_events.userValidatedIoActions.bind(_events)}>yes</Button>
               </div>

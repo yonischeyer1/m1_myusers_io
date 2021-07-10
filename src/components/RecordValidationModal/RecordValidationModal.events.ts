@@ -59,10 +59,10 @@ export default class RecordValidationModalEvents {
 
 
 
-    async handleClose  (close:any)  {
+    async handleClose  (close:any, restart = false)  {
         await this.setState({...DEFAULT_COMPONENT_STATE})
         const {handleModalClose} = this.props;
-        handleModalClose(close);
+        handleModalClose(close, restart);
         this.initFlag = false;
     };
 
@@ -99,7 +99,13 @@ export default class RecordValidationModalEvents {
          }
          return tags;
     }
-    
+
+    async recordAgain (e:any) {
+      const { recorderContainer } = this.props;
+      await removeContainerByName(recorderContainer._containerName)
+      await this.handleClose(false, true);
+    }
+     
       async userValidatedIoActions (e:any)  {
         const { recorderContainer } = this.props;
         const tags = await this.startAutoTagging();
