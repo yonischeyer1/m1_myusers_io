@@ -1,6 +1,7 @@
 import Container, { CONTAINER_MODE } from "../../services /container.service";
 import { setStatePromisifed } from "../../utils/general";
 import { createDummyUser } from '../../models/User.model'
+import { removeContainerByName } from "../../utils/IHost";
 
 
 export const DEFAULT_COMPONENT_STATE = {
@@ -71,6 +72,8 @@ export default class RecordingModalEvents {
         } else {
             await this.setState({...this.state, openRecordValidationModal:false})
             if(restart) {
+                await this.setState({...this.state, loading:true})
+                await removeContainerByName(this.state.recorderContainer._containerName)
                 await this.initRecorder(null);
             }
         }

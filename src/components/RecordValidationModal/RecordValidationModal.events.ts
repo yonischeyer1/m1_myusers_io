@@ -101,8 +101,6 @@ export default class RecordValidationModalEvents {
     }
 
     async recordAgain (e:any) {
-      const { recorderContainer } = this.props;
-      await removeContainerByName(recorderContainer._containerName)
       await this.handleClose(false, true);
     }
      

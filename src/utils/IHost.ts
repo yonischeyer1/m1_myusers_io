@@ -83,7 +83,7 @@ export async function isDockerImageBuilt(imageName: string) {
 }
 
 export async function runDockerImage(ports:any, containerName:string ,imageName: string, devPort?:any) {
-    const cmd = `docker run --log-driver none --shm-size=1g --name ${containerName} -d -p ${ports.vnc}:${config.CONTAINER_VNC_PORT} -p ${ports.hands}:${config.CONTAINER_IOCORE_PORT} -p ${ports.eyes}:${config.CONTAINER_VIDEO_ANALYZER_PORT} -p ${ports.devCustom}:${config.CONTAINER_DEV_CUSTOM_PORT} ${imageName} `
+    const cmd = `docker run --shm-size=1g --name ${containerName} -d -p ${ports.vnc}:${config.CONTAINER_VNC_PORT} -p ${ports.hands}:${config.CONTAINER_IOCORE_PORT} -p ${ports.eyes}:${config.CONTAINER_VIDEO_ANALYZER_PORT} -p ${ports.devCustom}:${config.CONTAINER_DEV_CUSTOM_PORT} ${imageName} `
     const response = await runLocalCMD(cmd);
     return response;
 }
