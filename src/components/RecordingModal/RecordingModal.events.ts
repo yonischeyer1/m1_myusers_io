@@ -69,7 +69,6 @@ export default class RecordingModalEvents {
         if(close) {
             await this.handleClose(close);
         } else {
-            debugger
             await this.setState({...this.state, openRecordValidationModal:false})
             if(restart) {
                 await this.initRecorder(null);
