@@ -7,6 +7,7 @@ const { takeScreenshotOfDesktop, removeScreenShot } = require('./frameStream')
 const { frameToHash, imageToHash, imageToHashAndURI, 
     drawOnImageAndReturnHashNODEJS, imageURIToHash } = require('./eyes.core')
 
+const FOREVER_WAIT_TIME_DELAY = 5000;
 
 let instance = null
 class EyesController {
@@ -14,9 +15,9 @@ class EyesController {
         if(instance) {
             return instance
         }
+        this.delayAttempt = false
         this._action = null
         this._tagIdx = 0
-        this._getTagDistanceAttemptIdx = 0
         this._faildTestDataResp = null
         this.instance = this
         return this
@@ -51,9 +52,13 @@ class EyesController {
         const dynamicData = await this.isDynamic(currentTag, frameURI)
         const isMatching = await this.foundMatchingScreenshot(res, dynamicData, {frameHash, hashOfTag})
         if(!isMatching.matching) {
-            const isFailedTest =  await this.failTest(res, isMatching.dist ,frameURI) 
-            if(!isFailedTest) {
+            if(currentTag.waitTime.label === "forever") {
                 return this.retryMatching(res, currentTag)
+            } else {
+                const isFailedTest =  await this.failTest(res, isMatching.dist ,frameURI) 
+                if(!isFailedTest) {
+                    return this.retryMatching(res, currentTag)
+                }
             }
         }
     }
@@ -110,8 +115,8 @@ class EyesController {
     }
 
     async failTest(res, dist, frameURI) {
-        if(this._getTagDistanceAttemptIdx > MAX_ATTEMPTS) {
-            this._getTagDistanceAttemptIdx = 0
+        if(this.delayAttempt) {
+            this.delayAttempt = false;
             this._faildTestDataResp = {success:false, dist, uri:frameURI, currentTagIdx:this._tagIdx}
             res.status(200).send(false) 
             return true
@@ -121,8 +126,12 @@ class EyesController {
 
     async retryMatching(res, currentTag) {
         await removeScreenShot(this._tagIdx)
-        this._getTagDistanceAttemptIdx++
-        await this.delay(currentTag.waitTime.value)
+        this.delayAttempt = true;
+        if(currentTag.waitTime.label === "forever") {
+            await this.delay(FOREVER_WAIT_TIME_DELAY)
+        } else {
+            await this.delay(currentTag.waitTime.value)
+        }
         await this.isDistValid(res)
     }
 
