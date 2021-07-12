@@ -66,7 +66,7 @@ export default function FullScreenDialog(props:any) {
                  <h3>Set wait time until Fail:</h3>
                  <FormControl component="fieldset" disabled={tag.skip}>
                  <FormLabel component="legend"></FormLabel>
-                 <RadioGroup  aria-label="waitTime" name="gender1" 
+                 <RadioGroup  aria-label="waitTime"  
                    value={tag.waitTime.label} 
                    onChange={_events.handleSetTimeoutChange.bind(_events)
                  }>

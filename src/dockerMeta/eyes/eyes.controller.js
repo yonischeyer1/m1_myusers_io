@@ -107,7 +107,6 @@ class EyesController {
         const matchingDistances = currentTag.distances.filter(x => dist <= x) 
         if(matchingDistances.length > 0) {
             this._tagIdx++
-            this._getTagDistanceAttemptIdx = 0
             res.status(200).send(true) 
             return {matching:true, dist}
         }

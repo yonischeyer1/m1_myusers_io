@@ -7,8 +7,8 @@ export const DEFAULT_COMPONENT_STATE = {
     tag: {
         name:"",
         waitTime: {
-            label: "forever",
-            value: -1
+            label: "custom",
+            value: 1000
         },
         originalReferenceSnapshotURI:"",
         dynamic:null,

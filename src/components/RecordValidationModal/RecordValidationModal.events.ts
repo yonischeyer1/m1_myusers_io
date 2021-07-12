@@ -88,8 +88,8 @@ export default class RecordValidationModalEvents {
              originalReferenceSnapshotURI: "",
              distances:[0],
              waitTime: {
-              label: "forever",
-              value: -1
+              label: "custom",
+              value: 1000
             },
              hash:"",
              skip:false,
