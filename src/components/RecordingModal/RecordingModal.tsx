@@ -62,6 +62,9 @@ export default function FullScreenDialog(props:any) {
                  <div className={styles["recoreder-control-button"]}>
                  <Button style={{position:'relative',marginLeft:'10px'}} size="small" variant="outlined" color="secondary" disabled={stopButtonDisable} onClick={_events.abort.bind(_events)}>abort</Button>
                  </div>
+                 <div className={styles["recoreder-control-button"]}>
+                 <Button style={{position:'relative',marginLeft:'10px'}} size="small" variant="outlined" color="secondary" disabled={stopButtonDisable} onClick={_events.restartRecording.bind(_events)}>restart</Button>
+                 </div>
                 </div>
                  <div style={{width:"auto"}}> 
                   <VncViewerComponent mode="recorder" port={port}/>

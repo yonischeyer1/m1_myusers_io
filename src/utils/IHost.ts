@@ -162,6 +162,13 @@ export async function isPortUsed(port:any) {
 }
 
 
+export async function getInternalIpAddressOSX () {
+    const command = "ipconfig getifaddr en0";
+    const response:any = await runLocalCMD(command);
+    return response;
+}
+
+
 
 export async function genaratePortNumber() {
     const port = getRandomArbitrary(5000, 6000)
