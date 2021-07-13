@@ -113,7 +113,7 @@ export default class RecordingModalEvents {
     }
 
     async restartRecording() {
-        await this.setState({...this.state, loading:true})
+        await this.setState({...this.state, loading:true, port:null})
         await removeContainerByName(this.state.recorderContainer._containerName)
         await this.initRecorder(null);
     }
