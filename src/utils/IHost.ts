@@ -64,7 +64,7 @@ export async function buildDockerImage(imageName:string) {
  if(isWindows()) {
      cmd = `cd ${APP_DOCKER_META_PATH} && docker build --rm -t ${imageName} .`
  } else {
-     cmd = `docker build --rm -t ${IMAGE_NAME} ${APP_DOCKER_META_PATH}`
+     cmd = `export DOCKER_BUILDKIT=0 && export COMPOSE_DOCKER_CLI_BUILD=0 && docker build --rm -t ${IMAGE_NAME} ${APP_DOCKER_META_PATH}`
  }
  const response = await runLocalCMD(cmd,(data: string)=>{
      return data.indexOf("Successfully tagged") > -1;
