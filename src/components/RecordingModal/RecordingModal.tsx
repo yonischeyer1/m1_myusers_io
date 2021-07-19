@@ -21,7 +21,7 @@ export default function FullScreenDialog(props:any) {
   _events.setConstructor(state, setState, props)
 
   const {open, port, loading, openRecordValidationModal, recorderContainer,
-    stopButtonDisable, currentUserPicked, actionName, startUrl, pickedAction }  = state;
+    stopButtonDisable, currentUserPicked, actionName, startUrl, pickedAction, vncMode }  = state;
 
 
   const title = ' Recording wizard '
@@ -67,7 +67,7 @@ export default function FullScreenDialog(props:any) {
                  </div>
                 </div>
                  <div style={{width:"auto"}}> 
-                  <VncViewerComponent mode="recorder" port={port}/>
+                  <VncViewerComponent mode={vncMode} port={port}/>
                  </div>
                 </div>
             }

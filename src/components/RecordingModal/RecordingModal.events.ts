@@ -15,7 +15,8 @@ export const DEFAULT_COMPONENT_STATE = {
     currentUserPicked:null,
     actionName:'',
     startUrl:'',
-    pickedAction:null
+    pickedAction:null,
+    vncMode:"recorder"
 }
 
 let instance:any = null
@@ -106,8 +107,9 @@ export default class RecordingModalEvents {
     }
 
     async stopRecording (e:any) {
-       await this.setState({...this.state, port:null})
+       //await this.setState({...this.state, port:null})
        const { recorderContainer } = this.state;
+       await this.setState({...this.state, vncMode:"player"})
        await recorderContainer.stopRecording();
        await this.setState({...this.state, openRecordValidationModal:true})
     }

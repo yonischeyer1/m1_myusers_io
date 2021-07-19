@@ -158,8 +158,8 @@ export default class Container {
     }
 
     async stopRecording(startUrl:any) {
-        await this.loadingFunction(true);
-        await stopContainerProcess(this._containerId ,this._containerProcess.vnc.pid)
+        //await this.loadingFunction(true);
+        //await stopContainerProcess(this._containerId ,this._containerProcess.vnc.pid)
         const ioActions = await (await this._ihands.stopRecordingKeyboardMouseAndGetIoActions()).json();
         this._ioActions = ioActions
         await stopContainerProcess(this._containerId ,this._containerProcess.browser.pid)
